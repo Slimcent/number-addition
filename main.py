@@ -1,16 +1,25 @@
-# This is a sample Python script.
+# while first_number == '':
+#     print("first number cannot be empty")
+#     first_number = input(first_number)
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+def input_validation(number):
+    while True:
+        try:
+            input_number = int(input(number))
+        except ValueError:
+            print("number is invalid")
+            continue
+        else:
+            return input_number
+            break
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+first_number = input_validation("Enter first number")
+print(f"First number {first_number}")
 
+second_number = input_validation("Enter second number")
+print(f"Second number {second_number}")
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+total = int(first_number + second_number)
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+print(f"Total is {total}")
